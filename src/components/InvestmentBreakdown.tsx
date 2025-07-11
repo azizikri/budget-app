@@ -20,7 +20,7 @@ const InvestmentBreakdown: React.FC<InvestmentBreakdownProps> = ({
     <Card shadow="sm" padding="lg" radius="md" withBorder role="region" aria-label="Rincian Alokasi Investasi">
       <Group justify="flex-end" mb="md">
         <Button
-          variant="light"
+          variant="dark"
           leftSection={<IconSettings size={16} />}
           onClick={openInvestmentDrawer}
           aria-label="Atur persentase alokasi investasi"

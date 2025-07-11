@@ -14,7 +14,7 @@ const IncomeInput: React.FC<IncomeInputProps> = ({ openDrawer }) => {
     <Paper shadow="sm" p="md" radius="md">
       <Group justify="flex-end" mb="md">
         <Button
-          variant="light"
+          variant="dark"
           leftSection={<IconSettings size={16} />}
           onClick={openDrawer}
           aria-label="Atur persentase alokasi budget"
