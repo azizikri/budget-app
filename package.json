@@ -7,7 +7,10 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "echo \"Add your test runner (e.g. vitest, jest)\" && exit 1",
+    "analyze": "vite build && open stats.html",
+    "a11y": "echo \"Add your accessibility test runner (e.g. axe, pa11y)\" && exit 1"
   },
   "dependencies": {
     "@mantine/core": "^7.17.4",

@@ -1,54 +1,68 @@
-# React + TypeScript + Vite
+# Budget App – Modern React, TypeScript, Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a modern, accessible, and high-performance budgeting app built with:
 
-Currently, two official plugins are available:
+- React 19
+- TypeScript 5.7+
+- Vite 6
+- Mantine 7
+- Zustand 5
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- Strict TypeScript and ESLint configuration
+- Accessibility-first UI (ARIA, alt text, keyboard navigation)
+- Performance profiling and bundle analysis
+- Modern state management with Zustand
+- Custom theming with Mantine
+- Automated linting, testing, and accessibility checks
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Getting Started
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Scripts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- `npm run dev` – Start development server
+- `npm run build` – Type-check and build for production
+- `npm run lint` – Run ESLint with type-aware and accessibility rules
+- `npm run preview` – Preview production build
+- `npm run analyze` – Build and open bundle analysis (see `stats.html`)
+- `npm run test` – Run tests (add your test runner)
+- `npm run a11y` – Run accessibility checks (add your a11y runner)
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Accessibility
+
+- All interactive elements use ARIA roles and labels.
+- All images and avatars must have descriptive `alt` text.
+- Keyboard navigation is supported throughout the app.
+- Use `eslint-plugin-jsx-a11y` and Mantine accessibility patterns.
+- Test with screen readers and automated tools.
+
+## Testing
+
+- Add and maintain unit/integration tests for all critical logic and UI.
+- Ensure accessibility tests are included in CI.
+- Use your preferred test runner (e.g., Vitest, Jest).
+
+## Performance
+
+- Bundle analysis is available via `npm run analyze` (see `stats.html`).
+- Code splitting and lazy loading are used for optimal performance.
+- Profile and optimize as needed.
+
+## Configuration
+
+- TypeScript: strict mode, modern module syntax, ESNext target.
+- ESLint: type-aware, accessibility, React, Mantine plugins.
+- Vite: modern config, bundle analyzer, code splitting.
+
+## Contributing
+
+- Follow accessibility and testing best practices.
+- Ensure all code passes lint, type, and a11y checks before PRs.
+
+---
