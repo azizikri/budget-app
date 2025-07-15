@@ -3,7 +3,13 @@ import { useMemo } from 'react';
 import { useBudgetStore } from '../store/budgetStore';
 
 export const useAllocations = () => {
-    const { income, needsPercent, wantsPercent, investPercent, usStocksPercent, cryptoPercent, rdpuPercent } = useBudgetStore();
+    const income = useBudgetStore.use.income();
+    const needsPercent = useBudgetStore.use.needsPercent();
+    const wantsPercent = useBudgetStore.use.wantsPercent();
+    const investPercent = useBudgetStore.use.investPercent();
+    const usStocksPercent = useBudgetStore.use.usStocksPercent();
+    const cryptoPercent = useBudgetStore.use.cryptoPercent();
+    const rdpuPercent = useBudgetStore.use.rdpuPercent();
 
     return useMemo(() => {
         const numericIncome = typeof income === 'number' ? income : parseFloat(String(income)) || 0;

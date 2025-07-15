@@ -10,7 +10,7 @@ interface InvestmentSettingsDrawerProps {
   onClose: () => void;
 }
 
-const InvestmentSettingsDrawer: React.FC<InvestmentSettingsDrawerProps> = ({
+const InvestmentSettingsDrawer: React.FC<InvestmentSettingsDrawerProps> = React.memo(({
   opened,
   onClose,
 }) => {
@@ -119,6 +119,6 @@ const InvestmentSettingsDrawer: React.FC<InvestmentSettingsDrawerProps> = ({
       </Stack>
     </Drawer>
   );
-};
+});
 
 export default InvestmentSettingsDrawer;

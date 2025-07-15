@@ -10,7 +10,7 @@ interface PercentageSettingsDrawerProps {
   onClose: () => void;
 }
 
-const PercentageSettingsDrawer: React.FC<PercentageSettingsDrawerProps> = ({
+const PercentageSettingsDrawer: React.FC<PercentageSettingsDrawerProps> = React.memo(({
   opened,
   onClose,
 }) => {
@@ -119,6 +119,6 @@ const PercentageSettingsDrawer: React.FC<PercentageSettingsDrawerProps> = ({
       </Stack>
     </Drawer>
   );
-};
+});
 
 export default PercentageSettingsDrawer;

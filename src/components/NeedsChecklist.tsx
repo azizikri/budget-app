@@ -17,7 +17,7 @@ const needsChecklistItems: ChecklistItem[] = [
 import { useAllocations } from '../hooks/useAllocations';
 import { useBudgetStore } from '../store/budgetStore';
 
-const NeedsChecklist: React.FC = () => {
+const NeedsChecklist: React.FC = React.memo(() => {
   const { needsAmount } = useAllocations();
   const { checkedNeeds, toggleNeed } = useBudgetStore();
 
@@ -48,6 +48,6 @@ const NeedsChecklist: React.FC = () => {
       </Text>
     </Card>
   );
-};
+});
 
 export default NeedsChecklist;

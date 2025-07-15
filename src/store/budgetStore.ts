@@ -48,7 +48,7 @@ const baseStore = create<BudgetState>()(
         {
             name: 'budget-store',
             version: 1,
-            migrate: (persisted, version) => persisted, // ready for future migrations
+            migrate: (persisted) => persisted, // ready for future migrations
             partialize: (state) => ({
                 income: state.income,
                 needsPercent: state.needsPercent,
@@ -68,7 +68,6 @@ const baseStore = create<BudgetState>()(
  * Only works with Zustand React stores (not vanilla).
  */
 type WithSelectors<S> = S extends {
-    (...args: any[]): infer R;
     getState: () => infer T;
 }
     ? S & { use: { [K in keyof T]: () => T[K] } }

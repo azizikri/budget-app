@@ -2,16 +2,14 @@
 import { useBudgetStore } from '../store/budgetStore';
 
 export const usePercentageHandlers = () => {
-    const {
-        needsPercent,
-        wantsPercent,
-        investPercent,
-        usStocksPercent,
-        cryptoPercent,
-        rdpuPercent,
-        setAllocationPercentages,
-        setInvestmentPercentages,
-    } = useBudgetStore();
+    const needsPercent = useBudgetStore.use.needsPercent();
+    const wantsPercent = useBudgetStore.use.wantsPercent();
+    const investPercent = useBudgetStore.use.investPercent();
+    const usStocksPercent = useBudgetStore.use.usStocksPercent();
+    const cryptoPercent = useBudgetStore.use.cryptoPercent();
+    const rdpuPercent = useBudgetStore.use.rdpuPercent();
+    const setAllocationPercentages = useBudgetStore.use.setAllocationPercentages();
+    const setInvestmentPercentages = useBudgetStore.use.setInvestmentPercentages();
 
     const handlePercentageChange = (type: 'needs' | 'wants' | 'invest', value: number) => {
         const newValue = Math.max(0, Math.min(100, value));

@@ -5,9 +5,9 @@ interface IdleOverlayProps {
   isIdle: boolean;
 }
 
-const IdleOverlay: React.FC<IdleOverlayProps> = ({ isIdle }) => {
+const IdleOverlay: React.FC<IdleOverlayProps> = React.memo(({ isIdle }) => {
   if (!isIdle) return null;
-  
+
   return (
     <Overlay
       blur={5}
@@ -16,6 +16,6 @@ const IdleOverlay: React.FC<IdleOverlayProps> = ({ isIdle }) => {
       zIndex={999}
     />
   );
-};
+});
 
 export default IdleOverlay;

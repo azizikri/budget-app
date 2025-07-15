@@ -21,6 +21,24 @@ export default defineConfig({
       },
     }),
   ],
+  optimizeDeps: {
+    holdUntilCrawlEnd: false,
+  },
+  server: {
+    warmup: {
+      clientFiles: [
+        './src/App.tsx',
+        './src/components/AllocationCards.tsx',
+        './src/components/AllocationProgress.tsx',
+        './src/components/IncomeInput.tsx',
+        './src/components/InvestmentBreakdown.tsx',
+        './src/components/NeedsChecklist.tsx'
+      ]
+    }
+  },
+  css: {
+    preprocessorMaxWorkers: true
+  },
   build: {
     target: 'esnext',
     rollupOptions: {
