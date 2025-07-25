@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "test": "echo \"Add your test runner (e.g. vitest, jest)\" && exit 1",
     "analyze": "vite build && open stats.html",
-    "a11y": "echo \"Add your accessibility test runner (e.g. axe, pa11y)\" && exit 1"
+    "a11y": "axe http://localhost:4173 --exit",
+    "a11y-dev": "axe http://localhost:5173 --exit"
   },
   "dependencies": {
     "@mantine/core": "^7.17.4",
@@ -21,6 +22,7 @@
     "zustand": "^5.0.6"
   },
   "devDependencies": {
+    "@axe-core/cli": "^4.10.2",
     "@eslint/js": "^9.21.0",
     "@types/react": "^19.1.1",
     "@types/react-dom": "^19.1.2",
@@ -33,6 +35,9 @@
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.24.1",
     "vite": "^6.2.0",
-    "vite-plugin-beasties": "^0.3.5"
+    "vite-plugin-beasties": "^0.3.5",
+    "vite-plugin-pwa": "^1.0.1",
+    "web-vitals": "^5.0.3",
+    "workbox-window": "^7.3.0"
   }
 }
